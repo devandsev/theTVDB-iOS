@@ -7,18 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0012F311F2104C900B8F18D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F301F2104C900B8F18D /* APIService.swift */; };
+		B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F321F210F6500B8F18D /* APIRequest.swift */; };
+		B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */; };
+		B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */; };
+		B0BEC8321F220AF8002BF7D4 /* TokenResponseScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */; };
+		B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8351F222193002BF7D4 /* APIError.swift */; };
 		B0CCC7511F2101160060F72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC74F1F2101160060F72D /* LaunchScreen.storyboard */; };
 		B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7591F2102310060F72D /* Assets.xcassets */; };
 		B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75B1F2102310060F72D /* AppDelegate.swift */; };
 		B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7621F2102310060F72D /* MainVC.swift */; };
 		B0CCC76E1F2102310060F72D /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7631F2102310060F72D /* MainVC.xib */; };
-		B0CCC76F1F2102310060F72D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7651F2102310060F72D /* APIService.swift */; };
 		B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7721F2103110060F72D /* HTTPError.swift */; };
 		B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7731F2103110060F72D /* HTTPJSON.swift */; };
 		B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7741F2103110060F72D /* HTTPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0012F301F2104C900B8F18D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B0012F321F210F6500B8F18D /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponseScheme.swift; sourceTree = "<group>"; };
+		B0BEC8351F222193002BF7D4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B0CCC7431F2101160060F72D /* tvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC7501F2101160060F72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC7521F2101160060F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -26,7 +37,6 @@
 		B0CCC75B1F2102310060F72D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0CCC7621F2102310060F72D /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B0CCC7631F2102310060F72D /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
-		B0CCC7651F2102310060F72D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B0CCC7721F2103110060F72D /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		B0CCC7731F2103110060F72D /* HTTPJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSON.swift; sourceTree = "<group>"; };
 		B0CCC7741F2103110060F72D /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
@@ -37,17 +47,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0012F2F1F2104C900B8F18D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B0BEC8301F220A71002BF7D4 /* Schemes */,
+				B0012F341F210FA300B8F18D /* APIResources */,
+				B0012F301F2104C900B8F18D /* APIService.swift */,
+				B0012F321F210F6500B8F18D /* APIRequest.swift */,
+				B0BEC8351F222193002BF7D4 /* APIError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B0012F341F210FA300B8F18D /* APIResources */ = {
+			isa = PBXGroup;
+			children = (
+				B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */,
+			);
+			path = APIResources;
+			sourceTree = "<group>";
+		};
+		B0BEC82B1F2209C0002BF7D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0BEC8301F220A71002BF7D4 /* Schemes */ = {
+			isa = PBXGroup;
+			children = (
+				B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */,
+			);
+			path = Schemes;
+			sourceTree = "<group>";
+		};
 		B0CCC73A1F2101160060F72D = {
 			isa = PBXGroup;
 			children = (
 				B0CCC7451F2101160060F72D /* tvShows */,
 				B0CCC7441F2101160060F72D /* Products */,
+				B0BEC82B1F2209C0002BF7D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +173,7 @@
 		B0CCC7641F2102310060F72D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B0CCC7651F2102310060F72D /* APIService.swift */,
+				B0012F2F1F2104C900B8F18D /* API */,
 				B0CCC7711F2103110060F72D /* Networking */,
 			);
 			path = Services;
@@ -158,6 +206,7 @@
 				B0CCC73F1F2101160060F72D /* Sources */,
 				B0CCC7401F2101160060F72D /* Frameworks */,
 				B0CCC7411F2101160060F72D /* Resources */,
+				B0BEC82E1F2209CB002BF7D4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -216,17 +265,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B0BEC82E1F2209CB002BF7D4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0CCC73F1F2101160060F72D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */,
-				B0CCC76F1F2102310060F72D /* APIService.swift in Sources */,
+				B0BEC8321F220AF8002BF7D4 /* TokenResponseScheme.swift in Sources */,
+				B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */,
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
+				B0012F311F2104C900B8F18D /* APIService.swift in Sources */,
 				B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */,
+				B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */,
+				B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +413,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NSS5L7KPRJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = tvShows/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -356,6 +431,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NSS5L7KPRJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = tvShows/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -384,6 +463,7 @@
 				B0CCC7571F2101160060F72D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

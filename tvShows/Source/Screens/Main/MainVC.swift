@@ -10,7 +10,15 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    let authenticationAPI = AuthenticationAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        authenticationAPI.login(apiKey: "asd", userKey: nil, userName: nil, success: { token in
+            print(token)
+        }) { error in
+            print(error)
+        }
     }
 }
