@@ -10,12 +10,12 @@
 		B0CCC7511F2101160060F72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC74F1F2101160060F72D /* LaunchScreen.storyboard */; };
 		B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7591F2102310060F72D /* Assets.xcassets */; };
 		B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75B1F2102310060F72D /* AppDelegate.swift */; };
-		B0CCC76B1F2102310060F72D /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75E1F2102310060F72D /* HTTPError.swift */; };
-		B0CCC76C1F2102310060F72D /* HTTPJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75F1F2102310060F72D /* HTTPJSON.swift */; };
 		B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7621F2102310060F72D /* MainVC.swift */; };
 		B0CCC76E1F2102310060F72D /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7631F2102310060F72D /* MainVC.xib */; };
 		B0CCC76F1F2102310060F72D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7651F2102310060F72D /* APIService.swift */; };
-		B0CCC7701F2102310060F72D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7671F2102310060F72D /* HTTPService.swift */; };
+		B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7721F2103110060F72D /* HTTPError.swift */; };
+		B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7731F2103110060F72D /* HTTPJSON.swift */; };
+		B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7741F2103110060F72D /* HTTPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +24,12 @@
 		B0CCC7521F2101160060F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0CCC7591F2102310060F72D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0CCC75B1F2102310060F72D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0CCC75E1F2102310060F72D /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
-		B0CCC75F1F2102310060F72D /* HTTPJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSON.swift; sourceTree = "<group>"; };
 		B0CCC7621F2102310060F72D /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B0CCC7631F2102310060F72D /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		B0CCC7651F2102310060F72D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		B0CCC7671F2102310060F72D /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		B0CCC7721F2103110060F72D /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		B0CCC7731F2103110060F72D /* HTTPJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSON.swift; sourceTree = "<group>"; };
+		B0CCC7741F2103110060F72D /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,6 @@
 		B0CCC75D1F2102310060F72D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B0CCC75E1F2102310060F72D /* HTTPError.swift */,
-				B0CCC75F1F2102310060F72D /* HTTPJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,17 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				B0CCC7651F2102310060F72D /* APIService.swift */,
-				B0CCC7661F2102310060F72D /* HTTPService */,
+				B0CCC7711F2103110060F72D /* Networking */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		B0CCC7661F2102310060F72D /* HTTPService */ = {
-			isa = PBXGroup;
-			children = (
-				B0CCC7671F2102310060F72D /* HTTPService.swift */,
-			);
-			path = HTTPService;
 			sourceTree = "<group>";
 		};
 		B0CCC7681F2102310060F72D /* Views */ = {
@@ -146,6 +136,16 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B0CCC7711F2103110060F72D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B0CCC7721F2103110060F72D /* HTTPError.swift */,
+				B0CCC7731F2103110060F72D /* HTTPJSON.swift */,
+				B0CCC7741F2103110060F72D /* HTTPService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,12 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0CCC76B1F2102310060F72D /* HTTPError.swift in Sources */,
+				B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */,
 				B0CCC76F1F2102310060F72D /* APIService.swift in Sources */,
+				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
+				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
-				B0CCC7701F2102310060F72D /* HTTPService.swift in Sources */,
 				B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */,
-				B0CCC76C1F2102310060F72D /* HTTPJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
