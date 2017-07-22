@@ -13,6 +13,7 @@
 		B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */; };
 		B0BEC8321F220AF8002BF7D4 /* TokenResponseScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */; };
 		B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8351F222193002BF7D4 /* APIError.swift */; };
+		B0BEC83A1F223B7F002BF7D4 /* ResponseErrorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */; };
 		B0CCC7511F2101160060F72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC74F1F2101160060F72D /* LaunchScreen.storyboard */; };
 		B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7591F2102310060F72D /* Assets.xcassets */; };
 		B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75B1F2102310060F72D /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponseScheme.swift; sourceTree = "<group>"; };
 		B0BEC8351F222193002BF7D4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseErrorScheme.swift; sourceTree = "<group>"; };
 		B0CCC7431F2101160060F72D /* tvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC7501F2101160060F72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC7521F2101160060F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */,
+				B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */,
 			);
 			path = Schemes;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */,
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
+				B0BEC83A1F223B7F002BF7D4 /* ResponseErrorScheme.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
 				B0012F311F2104C900B8F18D /* APIService.swift in Sources */,
 				B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */,

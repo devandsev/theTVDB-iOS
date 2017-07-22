@@ -1,5 +1,5 @@
 //
-//  TokenResponseScheme.swift
+//  ResponseErrorScheme.swift
 //  tvShows
 //
 //  Created by Andrey Sevrikov on 21/07/2017.
@@ -9,14 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class TokenResponseScheme: Mappable {
-    var token: String?
+class ResponseErrorScheme: Mappable {
+    var error: String?
     
     required init?(map: Map) {
-        
     }
     
     func mapping(map: Map) {
-        token <- map["token"]
+        error <- map["Error"]
     }
 }

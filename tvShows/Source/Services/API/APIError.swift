@@ -10,6 +10,7 @@ import Foundation
 
 enum APIError: Error {
     case httpError(error: HTTPError)
+    case apiError(message: String)
     case internalError(message: String)
     case missingField(message: String)
     case unknownError
@@ -19,7 +20,10 @@ enum APIError: Error {
             
         case .httpError(let error):
             return "Server error: \(error.description)"
-             
+        
+        case .apiError(let message):
+            return "API error: \(message)"
+
         case .internalError(let message):
             return "Internal API error: \(message)"
             

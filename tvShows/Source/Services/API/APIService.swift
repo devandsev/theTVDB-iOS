@@ -18,10 +18,17 @@ class APIService {
     let baseUrl: String = "https://api.thetvdb.com"
     let authToken: String? = ""
     
+    // MARK: - Public
+    
     func send<T>(request: APIRequest, scheme: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: Mappable {
         
         let fullUrl = baseUrl + request.url
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
+            
+            if let serializedError = self.error(from: result) {
+                completion(nil, serializedError)
+                return
+            }
             
             switch result {
                 
@@ -50,6 +57,11 @@ class APIService {
         let fullUrl = baseUrl + request.url
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
+            if let serializedError = self.error(from: result) {
+                completion([], serializedError)
+                return
+            }
+            
             switch result {
                 
             case .failure(let error):
@@ -72,6 +84,36 @@ class APIService {
                     completion(array, nil)
                 }
             }
+        }
+    }
+    
+    // MARK: Private
+    
+    private func error(from result: HTTPService.HTTPResult) -> APIError? {
+        
+        switch result {
+            
+        case .failure(let error):
+            return .httpError(error: error)
+            
+        case .success(let json, let code):
+            
+            guard 200...204 ~= code else {
+                
+                switch json {
+                    
+                case .dictionary(let json):
+                    let errorText = Mapper<ResponseErrorScheme>().map(JSON: json)?.error
+                    return .apiError(message: errorText ?? "Unknown error")
+                    
+                case .array(let json):
+                    return .apiError(message: "Expected error details ina dictionary, but got an array")
+                }
+                
+                
+            }
+            
+            return nil
         }
     }
 }
