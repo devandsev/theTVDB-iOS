@@ -11,11 +11,12 @@ import UIKit
 class MainVC: UIViewController {
 
     let authenticationAPI = AuthenticationAPI()
+    let config = ConfigService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authenticationAPI.login(apiKey: "asd", userKey: nil, userName: nil, success: { token in
+        authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: { token in
             print(token)
         }) { error in
             print(error)

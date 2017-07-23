@@ -16,6 +16,7 @@ class APIService {
     private let httpService = HTTPService.shared
     
     let baseUrl: String = "https://api.thetvdb.com"
+    
     let authToken: String? = ""
     
     // MARK: - Public
