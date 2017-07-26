@@ -35,7 +35,7 @@ class HTTPService {
     var headers: [String: String] = [:]
     
     init() {
-        
+
         headers = ["Content-Type": "application/json"]
     }
     
@@ -86,6 +86,8 @@ class HTTPService {
                 return (nil, .internalError(message: "Request URL is incorrect"))
             }
             
+            urlComponents.queryItems = []
+            
             for (key, value) in parameters {
                 urlComponents.queryItems?.append(URLQueryItem(name: key, value: String(describing: value)))
             }
@@ -94,12 +96,16 @@ class HTTPService {
                 return (nil, .internalError(message: "Request parameters are in incorrect format"))
             }
             requestUrl = urlComponentsUrl
+            print(requestUrl)
             
         default:
             guard let payload = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else {
                 return (nil, .internalError(message: "Request parameters are in incorrect format"))
             }
             httpBody = payload
+            
+            print(requestUrl)
+            print(parameters)
         }
         
         var request = URLRequest(url: requestUrl)
@@ -149,6 +155,8 @@ class HTTPService {
             completion(.failure(error: .parserError(message: "Couldn't serialize")))
             return
         }
+        
+        print("Got response:\n \(serializedJson)")
         
         completion(.success(json: serializedJson, code: response.statusCode))
     }

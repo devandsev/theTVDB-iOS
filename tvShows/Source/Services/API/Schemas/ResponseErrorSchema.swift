@@ -1,5 +1,5 @@
 //
-//  ResponseErrorScheme.swift
+//  ResponseErrorSchema.swift
 //  tvShows
 //
 //  Created by Andrey Sevrikov on 21/07/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class ResponseErrorScheme: Mappable {
+class ResponseErrorSchema: Mappable {
     var error: String?
     
     required init?(map: Map) {

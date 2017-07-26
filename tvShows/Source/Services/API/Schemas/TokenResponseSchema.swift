@@ -1,5 +1,5 @@
 //
-//  TokenResponseScheme.swift
+//  TokenResponseSchema.swift
 //  tvShows
 //
 //  Created by Andrey Sevrikov on 21/07/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class TokenResponseScheme: Mappable {
+class TokenResponseSchema: Mappable {
     var token: String?
     
     required init?(map: Map) {

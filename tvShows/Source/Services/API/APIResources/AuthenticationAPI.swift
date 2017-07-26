@@ -15,7 +15,7 @@ class AuthenticationAPI {
     func login(apiKey: String,
                userKey: String?,
                userName: String?,
-               success: @escaping (_ token: String) -> Void,
+               success: @escaping () -> Void,
                failure: @escaping (APIError) -> Void) {
         
         var parameters: [String: Any] = [:]
@@ -31,19 +31,20 @@ class AuthenticationAPI {
         
         let request = APIRequest(url: "/login", method: .post, parameters: parameters)
         
-        apiService.send(request: request, scheme: TokenResponseScheme.self) { scheme, error in
+        apiService.send(request: request, schema: TokenResponseSchema.self) { schema, error in
             
-            guard let scheme = scheme else {
+            guard let schema = schema else {
                 failure(error ?? .unknownError)
                 return
             }
             
-            guard let token = scheme.token else {
+            guard let token = schema.token else {
                 failure(.missingField(message: "Token is absent"))
                 return
             }
             
-            success(token)
+            self.apiService.authToken = token
+            success()
         }
     }
 }

@@ -10,12 +10,15 @@
 		B0012F311F2104C900B8F18D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F301F2104C900B8F18D /* APIService.swift */; };
 		B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F321F210F6500B8F18D /* APIRequest.swift */; };
 		B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */; };
+		B086CC481F2347840026E9FD /* ResponseErrorSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC461F2347840026E9FD /* ResponseErrorSchema.swift */; };
+		B086CC491F2347840026E9FD /* TokenResponseSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC471F2347840026E9FD /* TokenResponseSchema.swift */; };
+		B086CC4B1F23489B0026E9FD /* DataKeypathSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4A1F23489B0026E9FD /* DataKeypathSchema.swift */; };
+		B086CC4D1F234A630026E9FD /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4C1F234A630026E9FD /* Series.swift */; };
 		B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */; };
-		B0BEC8321F220AF8002BF7D4 /* TokenResponseScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */; };
 		B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8351F222193002BF7D4 /* APIError.swift */; };
-		B0BEC83A1F223B7F002BF7D4 /* ResponseErrorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */; };
 		B0BEC83C1F224095002BF7D4 /* keys_private.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEC83B1F224095002BF7D4 /* keys_private.plist */; };
 		B0BEC83E1F224170002BF7D4 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC83D1F224170002BF7D4 /* ConfigService.swift */; };
+		B0BEC8401F22507A002BF7D4 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */; };
 		B0CCC7511F2101160060F72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC74F1F2101160060F72D /* LaunchScreen.storyboard */; };
 		B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7591F2102310060F72D /* Assets.xcassets */; };
 		B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75B1F2102310060F72D /* AppDelegate.swift */; };
@@ -30,12 +33,15 @@
 		B0012F301F2104C900B8F18D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B0012F321F210F6500B8F18D /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		B086CC461F2347840026E9FD /* ResponseErrorSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseErrorSchema.swift; sourceTree = "<group>"; };
+		B086CC471F2347840026E9FD /* TokenResponseSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponseSchema.swift; sourceTree = "<group>"; };
+		B086CC4A1F23489B0026E9FD /* DataKeypathSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataKeypathSchema.swift; sourceTree = "<group>"; };
+		B086CC4C1F234A630026E9FD /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponseScheme.swift; sourceTree = "<group>"; };
 		B0BEC8351F222193002BF7D4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseErrorScheme.swift; sourceTree = "<group>"; };
 		B0BEC83B1F224095002BF7D4 /* keys_private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys_private.plist; sourceTree = "<group>"; };
 		B0BEC83D1F224170002BF7D4 /* ConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		B0CCC7431F2101160060F72D /* tvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC7501F2101160060F72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC7521F2101160060F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,7 +69,7 @@
 		B0012F2F1F2104C900B8F18D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B0BEC8301F220A71002BF7D4 /* Schemes */,
+				B086CC451F2347840026E9FD /* Schemas */,
 				B0012F341F210FA300B8F18D /* APIResources */,
 				B0012F301F2104C900B8F18D /* APIService.swift */,
 				B0012F321F210F6500B8F18D /* APIRequest.swift */,
@@ -76,8 +82,19 @@
 			isa = PBXGroup;
 			children = (
 				B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */,
+				B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */,
 			);
 			path = APIResources;
+			sourceTree = "<group>";
+		};
+		B086CC451F2347840026E9FD /* Schemas */ = {
+			isa = PBXGroup;
+			children = (
+				B086CC461F2347840026E9FD /* ResponseErrorSchema.swift */,
+				B086CC471F2347840026E9FD /* TokenResponseSchema.swift */,
+				B086CC4A1F23489B0026E9FD /* DataKeypathSchema.swift */,
+			);
+			path = Schemas;
 			sourceTree = "<group>";
 		};
 		B0BEC82B1F2209C0002BF7D4 /* Frameworks */ = {
@@ -86,15 +103,6 @@
 				B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B0BEC8301F220A71002BF7D4 /* Schemes */ = {
-			isa = PBXGroup;
-			children = (
-				B0BEC8311F220AF8002BF7D4 /* TokenResponseScheme.swift */,
-				B0BEC8391F223B7F002BF7D4 /* ResponseErrorScheme.swift */,
-			);
-			path = Schemes;
 			sourceTree = "<group>";
 		};
 		B0CCC73A1F2101160060F72D = {
@@ -157,6 +165,7 @@
 		B0CCC75D1F2102310060F72D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B086CC4C1F234A630026E9FD /* Series.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,12 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */,
-				B0BEC8321F220AF8002BF7D4 /* TokenResponseScheme.swift in Sources */,
+				B0BEC8401F22507A002BF7D4 /* SearchAPI.swift in Sources */,
 				B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */,
+				B086CC4B1F23489B0026E9FD /* DataKeypathSchema.swift in Sources */,
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
-				B0BEC83A1F223B7F002BF7D4 /* ResponseErrorScheme.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
+				B086CC481F2347840026E9FD /* ResponseErrorSchema.swift in Sources */,
+				B086CC491F2347840026E9FD /* TokenResponseSchema.swift in Sources */,
+				B086CC4D1F234A630026E9FD /* Series.swift in Sources */,
 				B0012F311F2104C900B8F18D /* APIService.swift in Sources */,
 				B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */,
 				B0BEC83E1F224170002BF7D4 /* ConfigService.swift in Sources */,

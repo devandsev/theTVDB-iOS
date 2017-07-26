@@ -11,13 +11,21 @@ import UIKit
 class MainVC: UIViewController {
 
     let authenticationAPI = AuthenticationAPI()
+    let searchAPI = SearchAPI()
     let config = ConfigService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: { token in
-            print(token)
+        authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: {
+            print("succ")
+            
+            self.searchAPI.search(name: "game", success: { series in
+                print(series)
+            }, failure: { error in
+                print(error)
+            })
+            
         }) { error in
             print(error)
         }

@@ -17,11 +17,20 @@ class APIService {
     
     let baseUrl: String = "https://api.thetvdb.com"
     
-    let authToken: String? = ""
+    var authToken: String? {
+        didSet {
+            guard let authToken = authToken,
+            !authToken.isEmpty else {
+                httpService.headers.removeValue(forKey: "Authorization")
+                return
+            }
+            httpService.headers["Authorization"] = "Bearer \(authToken)"
+        }
+    }
     
     // MARK: - Public
     
-    func send<T>(request: APIRequest, scheme: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: Mappable {
+    func send<T>(request: APIRequest, schema: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: Mappable {
         
         let fullUrl = baseUrl + request.url
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
@@ -104,7 +113,7 @@ class APIService {
                 switch json {
                     
                 case .dictionary(let json):
-                    let errorText = Mapper<ResponseErrorScheme>().map(JSON: json)?.error
+                    let errorText = Mapper<ResponseErrorSchema>().map(JSON: json)?.error
                     return .apiError(message: errorText ?? "Unknown error")
                     
                 case .array(let json):
