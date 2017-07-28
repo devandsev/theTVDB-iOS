@@ -9,14 +9,10 @@
 import Foundation
 import ObjectMapper
 
-class TokenResponseSchema: Mappable {
-    var token: String?
+struct TokenResponseSchema: ImmutableMappable {
+    var token: String
     
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        token <- map["token"]
+    init(map: Map) throws {
+        token = try map.value("token")
     }
 }

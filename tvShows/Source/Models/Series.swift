@@ -9,29 +9,25 @@
 import Foundation
 import ObjectMapper
 
-class Series: Mappable {
+struct Series: ImmutableMappable {
     
-    var id: Int?
-    var aliases: [String]?
-    var banner: String?
-    var firstAired: String?
-    var network: String?
+    var id: Int
+    var aliases: [String]
+    var banner: String
+    var firstAired: String
+    var network: String
     var overview: String?
-    var name: String?
-    var status: String?
+    var name: String
+    var status: String
     
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        id <- map["id"]
-        aliases <- map["aliases"]
-        banner <- map["banner"]
-        firstAired <- map["firstAired"]
-        network <- map["network"]
-        overview <- map["overview"]
-        name <- map["seriesName"]
-        status <- map["status"]
+    init(map: Map) throws {
+        id = try map.value("id")
+        aliases = try map.value("aliases")
+        banner = try map.value("banner")
+        firstAired = try map.value("firstAired")
+        network = try map.value("network")
+        overview = try? map.value("overview")
+        name = try map.value("seriesName")
+        status = try map.value("status")
     }
 }

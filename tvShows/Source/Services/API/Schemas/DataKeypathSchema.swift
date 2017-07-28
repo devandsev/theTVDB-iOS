@@ -9,14 +9,11 @@
 import Foundation
 import ObjectMapper
 
-class DataKeypathSchema<T: Mappable>: Mappable {
+struct DataKeypathSchema<T: ImmutableMappable>: ImmutableMappable {
     
-    var data: [T]?
+    var data: [T]
     
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        data <- map["data"]
+    init(map: Map) throws {
+        data = try map.value("data")
     }
 }

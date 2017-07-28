@@ -38,12 +38,7 @@ class AuthenticationAPI {
                 return
             }
             
-            guard let token = schema.token else {
-                failure(.missingField(message: "Token is absent"))
-                return
-            }
-            
-            self.apiService.authToken = token
+            self.apiService.authToken = schema.token
             success()
         }
     }

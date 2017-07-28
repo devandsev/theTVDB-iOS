@@ -30,7 +30,7 @@ class APIService {
     
     // MARK: - Public
     
-    func send<T>(request: APIRequest, schema: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: Mappable {
+    func send<T>(request: APIRequest, schema: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: ImmutableMappable {
         
         let fullUrl = baseUrl + request.url
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
@@ -49,11 +49,14 @@ class APIService {
                 switch json {
                     
                 case .dictionary(let json):
-                    guard let object = Mapper<T>().map(JSON: json) else {
+                    do {
+                        let object = try Mapper<T>().map(JSON: json)
+                        completion(object, nil)
+                    } catch let error as MapError {
+                        completion(nil, .internalError(message: "API: ObjectMapper error: \(error.description)"))
+                    } catch {
                         completion(nil, .internalError(message: "API: Couldn't map JSON to an object"))
-                        return
                     }
-                    completion(object, nil)
                     
                 case .array(let json):
                     completion(nil, .internalError(message: "API: Expected dictionary, but got an array"))
@@ -62,7 +65,7 @@ class APIService {
         }
     }
     
-    func send<T>(request: APIRequest, arrayOf: T.Type, completion: @escaping ([T], APIError?) -> Void) where T: Mappable {
+    func send<T>(request: APIRequest, arrayOf: T.Type, completion: @escaping ([T], APIError?) -> Void) where T: ImmutableMappable {
         
         let fullUrl = baseUrl + request.url
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
@@ -90,8 +93,14 @@ class APIService {
                         return
                     }
                     
-                    let array = Mapper<T>().mapArray(JSONArray: json)
-                    completion(array, nil)
+                    do {
+                        let array = try Mapper<T>().mapArray(JSONArray: json)
+                        completion(array, nil)
+                    } catch let error as MapError {
+                        completion([], .internalError(message: "API: ObjectMapper error: \(error.description)"))
+                    } catch {
+                        completion([], .internalError(message: "API: Couldn't map JSON to an object"))
+                    }
                 }
             }
         }
@@ -117,7 +126,7 @@ class APIService {
                     return .apiError(message: errorText ?? "Unknown error")
                     
                 case .array(let json):
-                    return .apiError(message: "Expected error details ina dictionary, but got an array")
+                    return .apiError(message: "Expected error details in a dictionary, but got an array")
                 }
                 
                 
