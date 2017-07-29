@@ -24,6 +24,8 @@ class HTTPService {
     
     static let shared: HTTPService = HTTPService()
     
+    let logger = LoggerService.shared
+    
     let session: URLSession = {
         
         let conf = URLSessionConfiguration.default
@@ -96,21 +98,19 @@ class HTTPService {
                 return (nil, .internalError(message: "Request parameters are in incorrect format"))
             }
             requestUrl = urlComponentsUrl
-            print(requestUrl)
             
         default:
             guard let payload = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else {
                 return (nil, .internalError(message: "Request parameters are in incorrect format"))
             }
             httpBody = payload
-            
-            print(requestUrl)
-            print(parameters)
         }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = method.rawValue
         request.httpBody = httpBody
+        
+        logger.logRequest(url: url, method: method, parameters: parameters)
         
         return(request, nil)
     }
@@ -155,8 +155,8 @@ class HTTPService {
             completion(.failure(error: .parserError(message: "Couldn't serialize")))
             return
         }
-        
-        print("Got response:\n \(serializedJson)")
+
+        logger.log(response: response, responseJSON: serializedJson)
         
         completion(.success(json: serializedJson, code: response.statusCode))
     }

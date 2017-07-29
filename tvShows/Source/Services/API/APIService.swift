@@ -14,6 +14,7 @@ class APIService {
     static let shared: APIService = APIService()
     
     private let httpService = HTTPService.shared
+    private let logger = LoggerService.shared
     
     let baseUrl: String = "https://api.thetvdb.com"
     
@@ -36,6 +37,7 @@ class APIService {
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
+                self.logger.log(error: serializedError)
                 completion(nil, serializedError)
                 return
             }
@@ -43,6 +45,7 @@ class APIService {
             switch result {
                 
             case .failure(let error):
+                self.logger.log(error: error)
                 completion(nil, .httpError(error: error))
                 
             case .success(let json, let code):
@@ -53,13 +56,19 @@ class APIService {
                         let object = try Mapper<T>().map(JSON: json)
                         completion(object, nil)
                     } catch let error as MapError {
-                        completion(nil, .internalError(message: "API: ObjectMapper error: \(error.description)"))
+                        let apiError: APIError = .internalError(message: "API: ObjectMapper error: \(error.description)")
+                        self.logger.log(error: apiError)
+                        completion(nil, apiError)
                     } catch {
-                        completion(nil, .internalError(message: "API: Couldn't map JSON to an object"))
+                        let apiError: APIError = .internalError(message: "API: Couldn't map JSON to an object")
+                        self.logger.log(error: apiError)
+                        completion(nil, apiError)
                     }
                     
                 case .array(let json):
-                    completion(nil, .internalError(message: "API: Expected dictionary, but got an array"))
+                    let apiError: APIError = .internalError(message: "API: Expected dictionary, but got an array")
+                    self.logger.log(error: apiError)
+                    completion(nil, apiError)
                 }
             }
         }
@@ -71,6 +80,7 @@ class APIService {
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
+                self.logger.log(error: serializedError)
                 completion([], serializedError)
                 return
             }
@@ -78,18 +88,23 @@ class APIService {
             switch result {
                 
             case .failure(let error):
+                self.logger.log(error: error)
                 completion([], .httpError(error: error))
                 
             case .success(let json, let code):
                 switch json {
                     
                 case .dictionary(let json):
-                    completion([], .internalError(message: "API: Expected array, but got a dictionary"))
+                    let apiError: APIError = .internalError(message: "API: Expected array, but got a dictionary")
+                    self.logger.log(error: apiError)
+                    completion([], apiError)
                     
                 case .array(let json):
                     
                     guard let json = json as? [[String: Any]] else {
-                        completion([], .internalError(message: "API: Incorrect JSON structure"))
+                        let apiError: APIError = .internalError(message: "API: Incorrect JSON structure")
+                        self.logger.log(error: apiError)
+                        completion([], apiError)
                         return
                     }
                     
@@ -97,9 +112,13 @@ class APIService {
                         let array = try Mapper<T>().mapArray(JSONArray: json)
                         completion(array, nil)
                     } catch let error as MapError {
-                        completion([], .internalError(message: "API: ObjectMapper error: \(error.description)"))
+                        let apiError: APIError = .internalError(message: "API: ObjectMapper error: \(error.description)")
+                        self.logger.log(error: apiError)
+                        completion([], apiError)
                     } catch {
-                        completion([], .internalError(message: "API: Couldn't map JSON to an object"))
+                        let apiError: APIError = .internalError(message: "API: Couldn't map JSON to an object")
+                        self.logger.log(error: apiError)
+                        completion([], apiError)
                     }
                 }
             }

@@ -18,16 +18,16 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: {
-            print("succ")
+//            print("succ")
             
             self.searchAPI.search(name: "game", success: { series in
-                print(series)
+//                print(series)
             }, failure: { error in
-                print(error)
+//                print(error.description)
             })
             
         }) { error in
-            print(error)
+//            print(error.description)
         }
     }
 }

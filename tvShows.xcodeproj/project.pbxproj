@@ -14,6 +14,7 @@
 		B086CC491F2347840026E9FD /* TokenResponseSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC471F2347840026E9FD /* TokenResponseSchema.swift */; };
 		B086CC4B1F23489B0026E9FD /* DataKeypathSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4A1F23489B0026E9FD /* DataKeypathSchema.swift */; };
 		B086CC4D1F234A630026E9FD /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4C1F234A630026E9FD /* Series.swift */; };
+		B086CC4F1F2366390026E9FD /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4E1F2366390026E9FD /* LoggerService.swift */; };
 		B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */; };
 		B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8351F222193002BF7D4 /* APIError.swift */; };
 		B0BEC83C1F224095002BF7D4 /* keys_private.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEC83B1F224095002BF7D4 /* keys_private.plist */; };
@@ -37,6 +38,7 @@
 		B086CC471F2347840026E9FD /* TokenResponseSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponseSchema.swift; sourceTree = "<group>"; };
 		B086CC4A1F23489B0026E9FD /* DataKeypathSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataKeypathSchema.swift; sourceTree = "<group>"; };
 		B086CC4C1F234A630026E9FD /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		B086CC4E1F2366390026E9FD /* LoggerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		B0BEC8351F222193002BF7D4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B0BEC83B1F224095002BF7D4 /* keys_private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys_private.plist; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				B0012F2F1F2104C900B8F18D /* API */,
 				B0CCC7711F2103110060F72D /* Networking */,
 				B0BEC83D1F224170002BF7D4 /* ConfigService.swift */,
+				B086CC4E1F2366390026E9FD /* LoggerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				B0BEC83E1F224170002BF7D4 /* ConfigService.swift in Sources */,
 				B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */,
 				B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */,
+				B086CC4F1F2366390026E9FD /* LoggerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,10 +12,9 @@ enum APIError: Error {
     case httpError(error: HTTPError)
     case apiError(message: String)
     case internalError(message: String)
-    case missingField(message: String)
     case unknownError
     
-    var description: String {
+    var detailedDescription: String {
         switch self {
             
         case .httpError(let error):
@@ -27,11 +26,25 @@ enum APIError: Error {
         case .internalError(let message):
             return "Internal API error: \(message)"
             
-        case .missingField(let message):
-            return "Missing required filed: \(message)"
-            
         case .unknownError:
             return "Unknown error"
+        }
+    }
+    
+    var description: String {
+        switch self {
+            
+        case .httpError(let error):
+            return "Server error"
+            
+        case .apiError(let message):
+            return "API error"
+            
+        case .internalError(let message):
+            return "Internal API error"
+            
+        case .unknownError:
+            return "Something went wrong"
         }
     }
 }
