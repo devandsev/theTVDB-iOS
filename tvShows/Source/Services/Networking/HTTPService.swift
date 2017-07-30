@@ -99,6 +99,10 @@ class HTTPService {
             }
             requestUrl = urlComponentsUrl
             
+            if parameters.count == 0 {
+                requestUrl = URL(string: url)!
+            }
+            
         default:
             guard let payload = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else {
                 return (nil, .internalError(message: "Request parameters are in incorrect format"))
