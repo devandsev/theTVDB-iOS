@@ -19,6 +19,7 @@
 		B086CC4D1F234A630026E9FD /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4C1F234A630026E9FD /* Series.swift */; };
 		B086CC4F1F2366390026E9FD /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC4E1F2366390026E9FD /* LoggerService.swift */; };
 		B086CC511F2375670026E9FD /* SeriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086CC501F2375670026E9FD /* SeriesAPI.swift */; };
+		B0B750451F49A82D0009CE5D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B750441F49A82D0009CE5D /* KeychainAccess.framework */; };
 		B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */; };
 		B0BEC8361F222193002BF7D4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC8351F222193002BF7D4 /* APIError.swift */; };
 		B0BEC83C1F224095002BF7D4 /* keys_private.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEC83B1F224095002BF7D4 /* keys_private.plist */; };
@@ -47,6 +48,7 @@
 		B086CC4C1F234A630026E9FD /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		B086CC4E1F2366390026E9FD /* LoggerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		B086CC501F2375670026E9FD /* SeriesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesAPI.swift; sourceTree = "<group>"; };
+		B0B750441F49A82D0009CE5D /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		B0BEC8351F222193002BF7D4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B0BEC83B1F224095002BF7D4 /* keys_private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys_private.plist; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BEC82D1F2209C0002BF7D4 /* ObjectMapper.framework in Frameworks */,
+				B0B750451F49A82D0009CE5D /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +115,7 @@
 		B0BEC82B1F2209C0002BF7D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0B750441F49A82D0009CE5D /* KeychainAccess.framework */,
 				B0BEC82C1F2209C0002BF7D4 /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
@@ -307,9 +311,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjectMapper.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
