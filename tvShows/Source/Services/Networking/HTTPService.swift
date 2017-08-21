@@ -30,6 +30,8 @@ class HTTPService {
         
         let conf = URLSessionConfiguration.default
         conf.timeoutIntervalForRequest = 10
+        conf.requestCachePolicy = .reloadIgnoringLocalCacheData
+        conf.urlCache = nil
         
         return URLSession(configuration: conf)
     }()

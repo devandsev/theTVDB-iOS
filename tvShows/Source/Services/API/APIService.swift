@@ -37,8 +37,23 @@ class APIService {
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
-                self.logger.log(error: serializedError)
-                completion(nil, serializedError)
+                
+                let failure: (APIError) -> Void = { error in
+                    self.logger.log(error: error)
+                    completion(nil, error)
+                }
+                
+                guard request.retriesLeft > 0 else {
+                    failure(serializedError)
+                    return
+                }
+                
+                SessionService.shared.updateIfNeeded(error: serializedError, success: {
+                    self.send(request: request, schema: schema, completion: completion)
+                }, failure: { error in
+                    failure(serializedError)
+                })
+                
                 return
             }
             
@@ -80,8 +95,23 @@ class APIService {
         httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
-                self.logger.log(error: serializedError)
-                completion([], serializedError)
+
+                let failure: (APIError) -> Void = { error in
+                    self.logger.log(error: error)
+                    completion([], error)
+                }
+                
+                guard request.retriesLeft > 0 else {
+                    failure(serializedError)
+                    return
+                }
+                
+                SessionService.shared.updateIfNeeded(error: serializedError, success: {
+                    self.send(request: request, arrayOf: arrayOf, completion: completion)
+                }, failure: { error in
+                    failure(serializedError)
+                })
+                
                 return
             }
             
@@ -142,7 +172,9 @@ class APIService {
                     
                 case .dictionary(let json):
                     let errorText = Mapper<ResponseErrorSchema>().map(JSON: json)?.error
-                    return .apiError(message: errorText ?? "Unknown error")
+                    let httpError = HTTPError.serverError(message: errorText ?? "Unknown error", code: code)
+
+                    return .httpError(error: httpError)
                     
                 case .array(let json):
                     return .apiError(message: "Expected error details in a dictionary, but got an array")

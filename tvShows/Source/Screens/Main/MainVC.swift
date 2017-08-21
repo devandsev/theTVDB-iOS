@@ -23,7 +23,13 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         sessionService.restore(success: { 
-            print("v")
+            
+            self.seriesAPI.series(id: 79636, success: { series in
+                print(series)
+            }, failure: { _ in
+                
+            })
+            
         }) { error in
             print(error)
         }

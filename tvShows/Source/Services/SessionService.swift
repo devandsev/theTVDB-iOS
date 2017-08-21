@@ -13,13 +13,13 @@ class SessionService {
     
     static let shared: SessionService = SessionService()
     
-    let config = ConfigService.shared
-    let authenticationAPI = AuthenticationAPI()
-    let apiService = APIService.shared
+    private let config = ConfigService.shared
+    private let authenticationAPI = AuthenticationAPI()
+    private let apiService = APIService.shared
     
-    let keychain = Keychain(service: KeychainKeys.keychainService)
+    private let keychain = Keychain(service: KeychainKeys.keychainService)
     
-    struct KeychainKeys {
+    private struct KeychainKeys {
         static let keychainService = "tvShows.keychain"
         static let authToken = "session.authToken"
     }
@@ -47,6 +47,24 @@ class SessionService {
         authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: { token in
             self.keychain[KeychainKeys.authToken] = token
             self.apiService.authToken = token
+            success()
+        }) { error in
+            failure(error)
+        }
+    }
+    
+    func updateIfNeeded(error: APIError,
+                        success: @escaping () -> Void,
+                        failure: @escaping (APIError) -> Void) {
+        
+        guard case let APIError.httpError(httpError) = error,
+        case let HTTPError.serverError(_, code) = httpError,
+        code == 401 else {
+            failure(error)
+            return
+        }
+        
+        self.reset(success: { 
             success()
         }) { error in
             failure(error)

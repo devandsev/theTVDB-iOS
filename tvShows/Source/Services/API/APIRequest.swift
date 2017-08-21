@@ -14,6 +14,8 @@ struct APIRequest {
     let method: HTTPService.HTTPMethod
     let parameters: [String: Any]
     
+    var retriesLeft: Int = 1
+    
     init(url: String, method: HTTPService.HTTPMethod, parameters: [String: Any]) {
         
         self.url = url
