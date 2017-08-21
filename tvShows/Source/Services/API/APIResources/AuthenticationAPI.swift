@@ -15,7 +15,7 @@ class AuthenticationAPI {
     func login(apiKey: String,
                userKey: String?,
                userName: String?,
-               success: @escaping () -> Void,
+               success: @escaping (String) -> Void,
                failure: @escaping (APIError) -> Void) {
         
         var parameters: [String: Any] = [:]
@@ -37,9 +37,8 @@ class AuthenticationAPI {
                 failure(error ?? .unknownError)
                 return
             }
-            
-            self.apiService.authToken = schema.token
-            success()
+        
+            success(schema.token)
         }
     }
 }

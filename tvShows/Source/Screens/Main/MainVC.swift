@@ -17,25 +17,27 @@ class MainVC: UIViewController {
     let seriesAPI = SeriesAPI()
     let config = ConfigService.shared
     
+    let sessionService = SessionService.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: {
-    //79636
-            
+        sessionService.restore(success: { 
+            print("v")
+        }) { error in
+            print(error)
+        }
+        
 //            self.seriesAPI.series(id: 79636, success: { series in
 //                print(series)
 //            }, failure: { _ in
-//                
+//
 //            })
-        
-            self.searchAPI.search(name: "game", success: { series in
-                print(series)
+
+//            self.searchAPI.search(name: "game", success: { series in
+//                print(series)
 
 //            }, failure: { error in
 //            })
-            
-        }) { error in
-        }
     }
 }

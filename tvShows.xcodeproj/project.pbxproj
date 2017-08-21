@@ -25,6 +25,7 @@
 		B0BEC83C1F224095002BF7D4 /* keys_private.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BEC83B1F224095002BF7D4 /* keys_private.plist */; };
 		B0BEC83E1F224170002BF7D4 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC83D1F224170002BF7D4 /* ConfigService.swift */; };
 		B0BEC8401F22507A002BF7D4 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */; };
+		B0BED6401F4B33AA00485678 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BED63F1F4B33AA00485678 /* SessionService.swift */; };
 		B0CCC7511F2101160060F72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC74F1F2101160060F72D /* LaunchScreen.storyboard */; };
 		B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC7591F2102310060F72D /* Assets.xcassets */; };
 		B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC75B1F2102310060F72D /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		B0BEC83B1F224095002BF7D4 /* keys_private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys_private.plist; sourceTree = "<group>"; };
 		B0BEC83D1F224170002BF7D4 /* ConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
 		B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		B0BED63F1F4B33AA00485678 /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		B0CCC7431F2101160060F72D /* tvShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC7501F2101160060F72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC7521F2101160060F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				B0CCC7711F2103110060F72D /* Networking */,
 				B0BEC83D1F224170002BF7D4 /* ConfigService.swift */,
 				B086CC4E1F2366390026E9FD /* LoggerService.swift */,
+				B0BED63F1F4B33AA00485678 /* SessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
+				B0BED6401F4B33AA00485678 /* SessionService.swift in Sources */,
 				B086CC481F2347840026E9FD /* ResponseErrorSchema.swift in Sources */,
 				B086CC491F2347840026E9FD /* TokenResponseSchema.swift in Sources */,
 				B086CC4D1F234A630026E9FD /* Series.swift in Sources */,
