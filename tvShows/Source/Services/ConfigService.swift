@@ -8,8 +8,11 @@
 
 import Foundation
 
+protocol HasConfigService {
+    var configService: ConfigService { get }
+}
+
 class ConfigService {
-    
     static let shared: ConfigService = ConfigService()
     
     var apiKey: String = {

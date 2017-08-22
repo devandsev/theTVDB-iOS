@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol HasAuthenticationAPI {
+    var authenticationAPI: AuthenticationAPI { get }
+}
+
 class AuthenticationAPI {
     
     let apiService = APIService.shared

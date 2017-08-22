@@ -8,23 +8,27 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, HasDependencies {
+    
+    typealias Dependencies = HasConfigService & HasAPI & HasSessionService
+    
+    var di: Dependencies!
 
     @IBOutlet weak var button: UIButton!
     
-    let authenticationAPI = AuthenticationAPI()
+//    let authenticationAPI = AuthenticationAPI()
     let searchAPI = SearchAPI()
     let seriesAPI = SeriesAPI()
-    let config = ConfigService.shared
+//    let config = ConfigService.shared
     
-    let sessionService = SessionService.shared
+//    let sessionService = SessionService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sessionService.restore(success: { 
+        di.sessionService.restore(success: {
             
-            self.seriesAPI.series(id: 79636, success: { series in
+            self.di.api.series.series(id: 79636, success: { series in
                 print(series)
             }, failure: { _ in
                 

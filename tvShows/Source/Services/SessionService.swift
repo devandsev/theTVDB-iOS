@@ -9,6 +9,10 @@
 import Foundation
 import KeychainAccess
 
+protocol HasSessionService {
+    var sessionService: SessionService { get }
+}
+
 class SessionService {
     
     static let shared: SessionService = SessionService()

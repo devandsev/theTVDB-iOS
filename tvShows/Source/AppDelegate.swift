@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        window.rootViewController = MainVC(nibName: "MainVC", bundle: nil)
+        let vc = MainVC(nibName: "MainVC", bundle: nil)
+        vc.di = DI.appDependencies
+        window.rootViewController = vc
         window.makeKeyAndVisible()
         
         return true
