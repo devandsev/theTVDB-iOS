@@ -48,6 +48,9 @@ class APIService {
                     return
                 }
                 
+                var request = request
+                request.retriesLeft -= 1
+                
                 SessionService.shared.updateIfNeeded(error: serializedError, success: {
                     self.send(request: request, schema: schema, completion: completion)
                 }, failure: { error in
@@ -104,6 +107,9 @@ class APIService {
                     failure(serializedError)
                     return
                 }
+                
+                var request = request
+                request.retriesLeft -= 1
                 
                 SessionService.shared.updateIfNeeded(error: serializedError, success: {
                     self.send(request: request, arrayOf: arrayOf, completion: completion)
