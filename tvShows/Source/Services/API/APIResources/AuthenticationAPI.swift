@@ -12,9 +12,10 @@ protocol HasAuthenticationAPI {
     var authenticationAPI: AuthenticationAPI { get }
 }
 
-class AuthenticationAPI {
+class AuthenticationAPI: HasDependencies {
     
-    let apiService = APIService.shared
+    typealias Dependencies = HasApiService
+    var di: Dependencies!
     
     func login(apiKey: String,
                userKey: String?,
@@ -35,7 +36,7 @@ class AuthenticationAPI {
         
         let request = APIRequest(url: "/login", method: .post, parameters: parameters)
         
-        apiService.send(request: request, schema: TokenResponseSchema.self) { schema, error in
+        self.di.apiService.send(request: request, schema: TokenResponseSchema.self) { schema, error in
             
             guard let schema = schema else {
                 failure(error ?? .unknownError)

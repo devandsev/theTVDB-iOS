@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol HasLoggerService {
+    var loggerService: LoggerService { get }
+}
+
 class LoggerService {
     
     enum RequestDetalization {
@@ -19,8 +23,6 @@ class LoggerService {
         case short
         case detailed
     }
-    
-    static let shared = LoggerService()
     
     var isEnabled = true
     

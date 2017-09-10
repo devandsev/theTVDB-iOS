@@ -9,9 +9,10 @@
 import Foundation
 import ObjectMapper
 
-class SearchAPI {
+class SearchAPI: HasDependencies {
     
-    let apiService = APIService.shared
+    typealias Dependencies = HasApiService
+    var di: Dependencies!
     
     func search(name: String,
                 success: @escaping ([Series]) -> Void,
@@ -22,7 +23,7 @@ class SearchAPI {
         
         let request = APIRequest(url: "/search/series", method: .get, parameters: parameters)
         
-        apiService.send(request: request, schema: DataArrayKeypathSchema<Series>.self) { schema, error in
+        self.di.apiService.send(request: request, schema: DataArrayKeypathSchema<Series>.self) { schema, error in
             
             guard let series = schema?.data else {
                 failure(error ?? .unknownError)

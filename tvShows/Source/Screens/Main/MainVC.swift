@@ -17,8 +17,6 @@ class MainVC: UIViewController, HasDependencies {
     @IBOutlet weak var button: UIButton!
     
 //    let authenticationAPI = AuthenticationAPI()
-    let searchAPI = SearchAPI()
-    let seriesAPI = SeriesAPI()
 //    let config = ConfigService.shared
     
 //    let sessionService = SessionService.shared
@@ -26,7 +24,7 @@ class MainVC: UIViewController, HasDependencies {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        di.sessionService.restore(success: {
+        self.di.sessionService.restore(success: {
             
             self.di.api.series.series(id: 79636, success: { series in
                 print(series)

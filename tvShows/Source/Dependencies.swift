@@ -8,32 +8,40 @@
 
 import Foundation
 
-struct AppDependencies: HasConfigService, HasAPI, HasSessionService {
+struct AppDependencies: HasConfigService, HasAPI, HasSessionService, HasApiService, HasLoggerService, HasHTTPService {
     
     let configService: ConfigService
     let sessionService: SessionService
+    let apiService: APIService
     let api: API
+    let loggerService: LoggerService
+    let httpService: HTTPService
+    
+    func resolveInternalDependencies() {
+        sessionService.di = self
+        apiService.di = self
+        httpService.di = self
+        
+        api.di = self
+        api.configure()
+    }
 }
 
 class DI {
     
     static let appDependencies: AppDependencies = {
         
-        return
-        AppDependencies(configService: ConfigService(),
-                        sessionService: SessionService(),
-                        api: API())
+        let d = AppDependencies(configService: ConfigService(),
+                                sessionService: SessionService(),
+                                apiService: APIService(),
+                                api: API(),
+                                loggerService: LoggerService(),
+                                httpService: HTTPService())
+        
+        d.resolveInternalDependencies()
+        
+        return d
     }()
-    
-//    static func configure<T: HasDependencies>(object: T) {
-//
-//    // `as?` fucks up dependencies
-//        guard let di = DI.appDependencies as? T.Dependencies else {
-//            return
-//        }
-//        
-//        object.di = di
-//    }
 }
 
 protocol HasDependencies: class {

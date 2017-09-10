@@ -9,12 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class APIService {
+protocol HasApiService {
+    var apiService: APIService { get }
+}
+
+class APIService: HasDependencies {
     
-    static let shared: APIService = APIService()
-    
-    private let httpService = HTTPService.shared
-    private let logger = LoggerService.shared
+    typealias Dependencies = HasSessionService & HasLoggerService & HasHTTPService
+    var di: Dependencies!
     
     let baseUrl: String = "https://api.thetvdb.com"
     
@@ -22,10 +24,10 @@ class APIService {
         didSet {
             guard let authToken = authToken,
             !authToken.isEmpty else {
-                httpService.headers.removeValue(forKey: "Authorization")
+                self.di.httpService.headers.removeValue(forKey: "Authorization")
                 return
             }
-            httpService.headers["Authorization"] = "Bearer \(authToken)"
+            self.di.httpService.headers["Authorization"] = "Bearer \(authToken)"
         }
     }
     
@@ -34,12 +36,12 @@ class APIService {
     func send<T>(request: APIRequest, schema: T.Type, completion: @escaping (T?, APIError?) -> Void) where T: ImmutableMappable {
         
         let fullUrl = baseUrl + request.url
-        httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
+        self.di.httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
                 
                 let failure: (APIError) -> Void = { error in
-                    self.logger.log(error: error)
+                    self.di.loggerService.log(error: error)
                     completion(nil, error)
                 }
                 
@@ -51,7 +53,9 @@ class APIService {
                 var request = request
                 request.retriesLeft -= 1
                 
-                SessionService.shared.updateIfNeeded(error: serializedError, success: {
+                
+                
+                self.di.sessionService.updateIfNeeded(error: serializedError, success: {
                     self.send(request: request, schema: schema, completion: completion)
                 }, failure: { error in
                     failure(serializedError)
@@ -63,14 +67,14 @@ class APIService {
             switch result {
                 
             case .failure(let error):
-                self.logger.log(error: error)
+                self.di.loggerService.log(error: error)
                 completion(nil, .httpError(error: error))
                 
-            case .success(let json, let code):
+            case .success(let json, _):
                 let (possibleJson, formatError) = self.checkThatItsDictionary(json: json)
                 
                 guard let dicJson = possibleJson else {
-                    self.logger.log(error: formatError)
+                    self.di.loggerService.log(error: formatError)
                     completion(nil, formatError)
                     return
                 }
@@ -80,11 +84,11 @@ class APIService {
                     completion(object, nil)
                 } catch let error as MapError {
                     let apiError: APIError = .internalError(message: "API: ObjectMapper error: \(error.description)")
-                    self.logger.log(error: apiError)
+                    self.di.loggerService.log(error: apiError)
                     completion(nil, apiError)
                 } catch {
                     let apiError: APIError = .internalError(message: "API: Couldn't map JSON to an object")
-                    self.logger.log(error: apiError)
+                    self.di.loggerService.log(error: apiError)
                     completion(nil, apiError)
                 }
             }
@@ -94,12 +98,12 @@ class APIService {
     func send<T>(request: APIRequest, arrayOf: T.Type, completion: @escaping ([T], APIError?) -> Void) where T: ImmutableMappable {
         
         let fullUrl = baseUrl + request.url
-        httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
+        self.di.httpService.request(url: fullUrl, method: request.method, parameters: request.parameters) { result in
             
             if let serializedError = self.error(from: result) {
 
                 let failure: (APIError) -> Void = { error in
-                    self.logger.log(error: error)
+                    self.di.loggerService.log(error: error)
                     completion([], error)
                 }
                 
@@ -111,7 +115,7 @@ class APIService {
                 var request = request
                 request.retriesLeft -= 1
                 
-                SessionService.shared.updateIfNeeded(error: serializedError, success: {
+                self.di.sessionService.updateIfNeeded(error: serializedError, success: {
                     self.send(request: request, arrayOf: arrayOf, completion: completion)
                 }, failure: { error in
                     failure(serializedError)
@@ -123,21 +127,21 @@ class APIService {
             switch result {
                 
             case .failure(let error):
-                self.logger.log(error: error)
+                self.di.loggerService.log(error: error)
                 completion([], .httpError(error: error))
                 
-            case .success(let json, let code):
+            case .success(let json, _):
                 let (possibleJson, formatError) = self.checkThatItsArray(json: json)
                 
                 guard let arrJson = possibleJson else {
-                    self.logger.log(error: formatError)
+                    self.di.loggerService.log(error: formatError)
                     completion([], formatError)
                     return
                 }
                 
                 guard let json = arrJson as? [[String: Any]] else {
                     let apiError: APIError = .internalError(message: "API: Incorrect JSON structure")
-                    self.logger.log(error: apiError)
+                    self.di.loggerService.log(error: apiError)
                     completion([], apiError)
                     return
                 }
@@ -147,11 +151,11 @@ class APIService {
                     completion(array, nil)
                 } catch let error as MapError {
                     let apiError: APIError = .internalError(message: "API: ObjectMapper error: \(error.description)")
-                    self.logger.log(error: apiError)
+                    self.di.loggerService.log(error: apiError)
                     completion([], apiError)
                 } catch {
                     let apiError: APIError = .internalError(message: "API: Couldn't map JSON to an object")
-                    self.logger.log(error: apiError)
+                    self.di.loggerService.log(error: apiError)
                     completion([], apiError)
                 }
             }

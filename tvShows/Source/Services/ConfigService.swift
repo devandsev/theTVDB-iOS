@@ -13,7 +13,6 @@ protocol HasConfigService {
 }
 
 class ConfigService {
-    static let shared: ConfigService = ConfigService()
     
     var apiKey: String = {
         guard let path = Bundle.main.path(forResource: "keys_private", ofType: "plist"),

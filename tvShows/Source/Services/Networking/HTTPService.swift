@@ -8,7 +8,14 @@
 
 import Foundation
 
-class HTTPService {
+protocol HasHTTPService {
+    var httpService: HTTPService { get }
+}
+
+class HTTPService: HasDependencies {
+    
+    typealias Dependencies = HasLoggerService
+    var di: Dependencies!
 
     enum HTTPMethod: String {
         case get = "GET"
@@ -21,10 +28,6 @@ class HTTPService {
         case success(json: HTTPJSON, code: Int)
         case failure(error: HTTPError)
     }
-    
-    static let shared: HTTPService = HTTPService()
-    
-    let logger = LoggerService.shared
     
     let session: URLSession = {
         
@@ -116,7 +119,7 @@ class HTTPService {
         request.httpMethod = method.rawValue
         request.httpBody = httpBody
         
-        logger.logRequest(url: url, method: method, parameters: parameters)
+        di.loggerService.logRequest(url: url, method: method, parameters: parameters)
         
         return(request, nil)
     }
@@ -162,7 +165,7 @@ class HTTPService {
             return
         }
 
-        logger.log(response: response, responseJSON: serializedJson)
+        di.loggerService.log(response: response, responseJSON: serializedJson)
         
         completion(.success(json: serializedJson, code: response.statusCode))
     }

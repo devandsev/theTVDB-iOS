@@ -12,9 +12,18 @@ protocol HasAPI {
     var api: API { get }
 }
 
-class API {
+class API: HasDependencies {
+    
+    typealias Dependencies = HasApiService
+    var di: Dependencies!
     
     let authentication = AuthenticationAPI()
     let search = SearchAPI()
     let series = SeriesAPI()
+    
+    func configure() {
+        authentication.di = di
+        search.di = di
+        series.di = di
+    }
 }

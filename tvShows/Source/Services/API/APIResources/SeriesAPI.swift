@@ -9,19 +9,18 @@
 import Foundation
 import ObjectMapper
 
-class SeriesAPI {
+class SeriesAPI: HasDependencies {
     
-    let apiService = APIService.shared
+    typealias Dependencies = HasApiService
+    var di: Dependencies!
     
     func series(id: Int,
                 success: @escaping (Series) -> Void,
                 failure: @escaping (APIError) -> Void) {
         
-        var parameters: [String: Any] = [:]
+        let request = APIRequest(url: "/series/\(id)", method: .get, parameters: [:])
         
-        let request = APIRequest(url: "/series/\(id)", method: .get, parameters: parameters)
-        
-        apiService.send(request: request, schema: DataKeyPathSchema<Series>.self) { schema, error in
+        self.di.apiService.send(request: request, schema: DataKeyPathSchema<Series>.self) { schema, error in
             
             guard let series = schema?.data else {
                 failure(error ?? .unknownError)

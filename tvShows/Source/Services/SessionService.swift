@@ -13,13 +13,10 @@ protocol HasSessionService {
     var sessionService: SessionService { get }
 }
 
-class SessionService {
+class SessionService: HasDependencies {
     
-    static let shared: SessionService = SessionService()
-    
-    private let config = ConfigService.shared
-    private let authenticationAPI = AuthenticationAPI()
-    private let apiService = APIService.shared
+    typealias Dependencies = HasApiService & HasConfigService & HasAPI
+    var di: Dependencies!
     
     private let keychain = Keychain(service: KeychainKeys.keychainService)
     
@@ -41,16 +38,16 @@ class SessionService {
             return
         }
         
-        self.apiService.authToken = authToken
+        self.di.apiService.authToken = authToken
         success()
     }
     
     func reset(success: @escaping () -> Void,
                failure: @escaping (APIError) -> Void) {
         
-        authenticationAPI.login(apiKey: config.apiKey, userKey: nil, userName: nil, success: { token in
+        self.di.api.authentication.login(apiKey: self.di.configService.apiKey, userKey: nil, userName: nil, success: { token in
             self.keychain[KeychainKeys.authToken] = token
-            self.apiService.authToken = token
+            self.di.apiService.authToken = token
             success()
         }) { error in
             failure(error)
