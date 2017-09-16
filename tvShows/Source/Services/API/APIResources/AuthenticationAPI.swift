@@ -17,6 +17,8 @@ class AuthenticationAPI: HasDependencies {
     typealias Dependencies = HasApiService
     var di: Dependencies!
     
+    let endpoint = "/login"
+    
     func login(apiKey: String,
                userKey: String?,
                userName: String?,
@@ -34,7 +36,7 @@ class AuthenticationAPI: HasDependencies {
             parameters["username"] = userName
         }
         
-        let request = APIRequest(url: "/login", method: .post, parameters: parameters)
+        let request = APIRequest(url: endpoint, method: .post, parameters: parameters)
         
         self.di.apiService.send(request: request, schema: TokenResponseSchema.self) { schema, error in
             

@@ -14,6 +14,8 @@ class SearchAPI: HasDependencies {
     typealias Dependencies = HasApiService
     var di: Dependencies!
     
+    let endpoint = "/search/series"
+    
     func search(name: String,
                 success: @escaping ([Series]) -> Void,
                 failure: @escaping (APIError) -> Void) {
@@ -21,7 +23,7 @@ class SearchAPI: HasDependencies {
         var parameters: [String: Any] = [:]
         parameters["name"] = name
         
-        let request = APIRequest(url: "/search/series", method: .get, parameters: parameters)
+        let request = APIRequest(url: endpoint, method: .get, parameters: parameters)
         
         self.di.apiService.send(request: request, schema: DataArrayKeypathSchema<Series>.self) { schema, error in
             
