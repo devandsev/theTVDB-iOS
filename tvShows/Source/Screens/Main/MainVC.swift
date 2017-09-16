@@ -25,13 +25,22 @@ class MainVC: UIViewController, HasDependencies {
         super.viewDidLoad()
         
         self.di.sessionService.restore(success: {
+
+            let week: TimeInterval = 7 * 24 * 60 * 60
+            let weekAgo = Date().addingTimeInterval(-week)
             
-            self.di.api.series.series(id: 79636, success: { series in
-                print(series)
-            }, failure: { _ in
+            self.di.api.updates.updatedSince(date: weekAgo, success: { (s) in
+                
+            }, failure: { (e) in
                 
             })
             
+//            self.di.api.series.series(id: 79636, success: { series in
+//                print(series)
+//            }, failure: { _ in
+//                
+//            })
+//
         }) { error in
             print(error)
         }

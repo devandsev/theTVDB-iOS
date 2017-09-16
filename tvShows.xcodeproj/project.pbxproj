@@ -36,6 +36,7 @@
 		B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7721F2103110060F72D /* HTTPError.swift */; };
 		B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7731F2103110060F72D /* HTTPJSON.swift */; };
 		B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7741F2103110060F72D /* HTTPService.swift */; };
+		B0D4E2201F6D979A002E32F1 /* UpdatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		B0CCC7721F2103110060F72D /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		B0CCC7731F2103110060F72D /* HTTPJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSON.swift; sourceTree = "<group>"; };
 		B0CCC7741F2103110060F72D /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */,
 				B0BEC83F1F22507A002BF7D4 /* SearchAPI.swift */,
 				B086CC501F2375670026E9FD /* SeriesAPI.swift */,
+				B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */,
 			);
 			path = APIResources;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
 				B0BED6401F4B33AA00485678 /* SessionService.swift in Sources */,
+				B0D4E2201F6D979A002E32F1 /* UpdatesAPI.swift in Sources */,
 				B086CC481F2347840026E9FD /* ResponseErrorSchema.swift in Sources */,
 				B086CC491F2347840026E9FD /* TokenResponseSchema.swift in Sources */,
 				B086CC4D1F234A630026E9FD /* Series.swift in Sources */,

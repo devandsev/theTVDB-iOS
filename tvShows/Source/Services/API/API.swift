@@ -20,10 +20,12 @@ class API: HasDependencies {
     let authentication = AuthenticationAPI()
     let search = SearchAPI()
     let series = SeriesAPI()
+    let updates = UpdatesAPI()
     
     func configure() {
         authentication.di = di
         search.di = di
         series.di = di
+        updates.di = di
     }
 }
