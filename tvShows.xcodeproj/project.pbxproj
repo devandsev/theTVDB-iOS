@@ -10,6 +10,8 @@
 		B0012F311F2104C900B8F18D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F301F2104C900B8F18D /* APIService.swift */; };
 		B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F321F210F6500B8F18D /* APIRequest.swift */; };
 		B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */; };
+		B02FA4861F6DA0D5005FF16F /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FA4851F6DA0D5005FF16F /* Actor.swift */; };
+		B02FA4891F6DA4C4005FF16F /* PlainDateTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FA4881F6DA4C4005FF16F /* PlainDateTransforms.swift */; };
 		B050EBC61F25DBD200752DDA /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050EBC51F25DBD200752DDA /* Errors.swift */; };
 		B050EBC81F25DE7E00752DDA /* DataArrayKeyPathSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050EBC71F25DE7E00752DDA /* DataArrayKeyPathSchema.swift */; };
 		B050EBCC1F25EA9A00752DDA /* SeriesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050EBCB1F25EA9A00752DDA /* SeriesDetails.swift */; };
@@ -43,6 +45,8 @@
 		B0012F301F2104C900B8F18D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B0012F321F210F6500B8F18D /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B0012F351F210FCF00B8F18D /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		B02FA4851F6DA0D5005FF16F /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		B02FA4881F6DA4C4005FF16F /* PlainDateTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainDateTransforms.swift; sourceTree = "<group>"; };
 		B050EBC51F25DBD200752DDA /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		B050EBC71F25DE7E00752DDA /* DataArrayKeyPathSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataArrayKeyPathSchema.swift; sourceTree = "<group>"; };
 		B050EBCB1F25EA9A00752DDA /* SeriesDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesDetails.swift; sourceTree = "<group>"; };
@@ -109,6 +113,14 @@
 				B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */,
 			);
 			path = APIResources;
+			sourceTree = "<group>";
+		};
+		B02FA4871F6DA49C005FF16F /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				B02FA4881F6DA4C4005FF16F /* PlainDateTransforms.swift */,
+			);
+			path = Transforms;
 			sourceTree = "<group>";
 		};
 		B086CC451F2347840026E9FD /* Schemas */ = {
@@ -192,9 +204,11 @@
 		B0CCC75D1F2102310060F72D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B02FA4871F6DA49C005FF16F /* Transforms */,
 				B086CC4C1F234A630026E9FD /* Series.swift */,
 				B050EBC51F25DBD200752DDA /* Errors.swift */,
 				B050EBCB1F25EA9A00752DDA /* SeriesDetails.swift */,
+				B02FA4851F6DA0D5005FF16F /* Actor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +363,7 @@
 				B0529C881F4CA9A500E478DA /* Dependencies.swift in Sources */,
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
+				B02FA4891F6DA4C4005FF16F /* PlainDateTransforms.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
 				B0BED6401F4B33AA00485678 /* SessionService.swift in Sources */,
 				B0D4E2201F6D979A002E32F1 /* UpdatesAPI.swift in Sources */,
@@ -364,6 +379,7 @@
 				B086CC4F1F2366390026E9FD /* LoggerService.swift in Sources */,
 				B050EBC61F25DBD200752DDA /* Errors.swift in Sources */,
 				B086CC511F2375670026E9FD /* SeriesAPI.swift in Sources */,
+				B02FA4861F6DA0D5005FF16F /* Actor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

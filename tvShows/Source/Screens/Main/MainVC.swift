@@ -35,7 +35,7 @@ class MainVC: UIViewController, HasDependencies {
 //                
 //            })
             
-            self.di.api.series.series(id: 79636, success: { series in
+            self.di.api.series.actors(seriesId: 79636, success: { series in
                 print(series)
             }, failure: { _ in
                 

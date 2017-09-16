@@ -32,4 +32,21 @@ class SeriesAPI: HasDependencies {
             success(series)
         }
     }
+    
+    func actors(seriesId: Int,
+                success: @escaping ([Actor]) -> Void,
+                failure: @escaping (APIError) -> Void) {
+        
+        let request = APIRequest(url: endpoint + "/\(seriesId)" + "/actors", method: .get, parameters: [:])
+        
+        self.di.apiService.send(request: request, schema: DataArrayKeypathSchema<Actor>.self) { schema, error in
+            
+            guard let actors = schema?.data else {
+                failure(error ?? .unknownError)
+                return
+            }
+            
+            success(actors)
+        }
+    }
 }
