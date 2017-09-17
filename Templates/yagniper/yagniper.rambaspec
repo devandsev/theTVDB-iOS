@@ -1,0 +1,24 @@
+# Template information section
+name: "yagniper"
+summary: "All the good stuff from VIPER, MVVM and MVP."
+author: "Andrey Sevrikov"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+
+# Wireframe
+- {name: WF.swift, path: Code/WF.swift.liquid}
+
+# View model
+- {name: VM.swift, path: Code/VM.swift.liquid}
+
+# Interactor
+- {name: IX.swift, path: Code/IX.swift.liquid}
+
+# ViewController
+- {name: VC.swift, path: Code/VC.swift.liquid}
+
+# View
+- {name: VC.xib, path: Code/VC.xib.liquid}
