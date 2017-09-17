@@ -39,6 +39,14 @@
 		B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7731F2103110060F72D /* HTTPJSON.swift */; };
 		B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC7741F2103110060F72D /* HTTPService.swift */; };
 		B0D4E2201F6D979A002E32F1 /* UpdatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */; };
+		B0F520BB1F6E9933004B0B9A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520B91F6E9933004B0B9A /* SearchVC.swift */; };
+		B0F520BC1F6E9933004B0B9A /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F520BA1F6E9933004B0B9A /* SearchVC.xib */; };
+		B0F520BE1F6E995F004B0B9A /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520BD1F6E995F004B0B9A /* SearchVM.swift */; };
+		B0F520C01F6E996A004B0B9A /* SearchIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520BF1F6E996A004B0B9A /* SearchIX.swift */; };
+		B0F520C21F6E9A5F004B0B9A /* SearchWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520C11F6E9A5F004B0B9A /* SearchWF.swift */; };
+		B0F520C41F6E9B25004B0B9A /* WF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520C31F6E9B25004B0B9A /* WF.swift */; };
+		B0F520C61F6E9C29004B0B9A /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520C51F6E9C29004B0B9A /* VC.swift */; };
+		B0F520C81F6EA19E004B0B9A /* IX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F520C71F6EA19E004B0B9A /* IX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,14 @@
 		B0CCC7731F2103110060F72D /* HTTPJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSON.swift; sourceTree = "<group>"; };
 		B0CCC7741F2103110060F72D /* HTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		B0D4E21F1F6D979A002E32F1 /* UpdatesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesAPI.swift; sourceTree = "<group>"; };
+		B0F520B91F6E9933004B0B9A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		B0F520BA1F6E9933004B0B9A /* SearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		B0F520BD1F6E995F004B0B9A /* SearchVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
+		B0F520BF1F6E996A004B0B9A /* SearchIX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchIX.swift; sourceTree = "<group>"; };
+		B0F520C11F6E9A5F004B0B9A /* SearchWF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWF.swift; sourceTree = "<group>"; };
+		B0F520C31F6E9B25004B0B9A /* WF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WF.swift; sourceTree = "<group>"; };
+		B0F520C51F6E9C29004B0B9A /* VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		B0F520C71F6EA19E004B0B9A /* IX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				B0CCC7611F2102310060F72D /* Main */,
+				B0F520B61F6E98E5004B0B9A /* Search */,
+				B0F520C31F6E9B25004B0B9A /* WF.swift */,
+				B0F520C51F6E9C29004B0B9A /* VC.swift */,
+				B0F520C71F6EA19E004B0B9A /* IX.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -257,6 +277,18 @@
 				B0CCC7741F2103110060F72D /* HTTPService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B0F520B61F6E98E5004B0B9A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B0F520C11F6E9A5F004B0B9A /* SearchWF.swift */,
+				B0F520BD1F6E995F004B0B9A /* SearchVM.swift */,
+				B0F520BF1F6E996A004B0B9A /* SearchIX.swift */,
+				B0F520B91F6E9933004B0B9A /* SearchVC.swift */,
+				B0F520BA1F6E9933004B0B9A /* SearchVC.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F520BC1F6E9933004B0B9A /* SearchVC.xib in Resources */,
 				B0CCC76E1F2102310060F72D /* MainVC.xib in Resources */,
 				B0CCC7691F2102310060F72D /* Assets.xcassets in Resources */,
 				B0BEC83C1F224095002BF7D4 /* keys_private.plist in Resources */,
@@ -356,14 +389,19 @@
 			files = (
 				B0CCC7751F2103110060F72D /* HTTPError.swift in Sources */,
 				B0BEC8401F22507A002BF7D4 /* SearchAPI.swift in Sources */,
+				B0F520C41F6E9B25004B0B9A /* WF.swift in Sources */,
 				B050EBC81F25DE7E00752DDA /* DataArrayKeyPathSchema.swift in Sources */,
+				B0F520C01F6E996A004B0B9A /* SearchIX.swift in Sources */,
+				B0F520BB1F6E9933004B0B9A /* SearchVC.swift in Sources */,
 				B050EBCC1F25EA9A00752DDA /* SeriesDetails.swift in Sources */,
 				B0012F331F210F6500B8F18D /* APIRequest.swift in Sources */,
+				B0F520C81F6EA19E004B0B9A /* IX.swift in Sources */,
 				B086CC4B1F23489B0026E9FD /* DataKeyPathSchema.swift in Sources */,
 				B0529C881F4CA9A500E478DA /* Dependencies.swift in Sources */,
 				B0CCC7761F2103110060F72D /* HTTPJSON.swift in Sources */,
 				B0CCC7771F2103110060F72D /* HTTPService.swift in Sources */,
 				B02FA4891F6DA4C4005FF16F /* PlainDateTransforms.swift in Sources */,
+				B0F520C61F6E9C29004B0B9A /* VC.swift in Sources */,
 				B0CCC76D1F2102310060F72D /* MainVC.swift in Sources */,
 				B0BED6401F4B33AA00485678 /* SessionService.swift in Sources */,
 				B0D4E2201F6D979A002E32F1 /* UpdatesAPI.swift in Sources */,
@@ -372,6 +410,7 @@
 				B086CC4D1F234A630026E9FD /* Series.swift in Sources */,
 				B0012F311F2104C900B8F18D /* APIService.swift in Sources */,
 				B0529C8A1F4CBFD600E478DA /* API.swift in Sources */,
+				B0F520C21F6E9A5F004B0B9A /* SearchWF.swift in Sources */,
 				B0CCC76A1F2102310060F72D /* AppDelegate.swift in Sources */,
 				B0BEC83E1F224170002BF7D4 /* ConfigService.swift in Sources */,
 				B0012F361F210FCF00B8F18D /* AuthenticationAPI.swift in Sources */,
@@ -379,6 +418,7 @@
 				B086CC4F1F2366390026E9FD /* LoggerService.swift in Sources */,
 				B050EBC61F25DBD200752DDA /* Errors.swift in Sources */,
 				B086CC511F2375670026E9FD /* SeriesAPI.swift in Sources */,
+				B0F520BE1F6E995F004B0B9A /* SearchVM.swift in Sources */,
 				B02FA4861F6DA0D5005FF16F /* Actor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

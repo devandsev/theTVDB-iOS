@@ -20,9 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
+        
         let vc = MainVC(nibName: "MainVC", bundle: nil)
         vc.di = DI.appDependencies
-        window.rootViewController = vc
+        
+        let nc = UINavigationController(rootViewController: vc)
+        
+        window.rootViewController = nc
         window.makeKeyAndVisible()
         
         return true

@@ -26,6 +26,10 @@ class MainVC: UIViewController, HasDependencies {
         
         self.di.sessionService.restore(success: {
 
+            let vc = SearchWF(with: self.navigationController!).module()
+            self.navigationController!.pushViewController(vc, animated: true)
+//            self.navigationController!.present(vc, animated: true) {}
+            
 //            let week: TimeInterval = 7 * 24 * 60 * 60
 //            let weekAgo = Date().addingTimeInterval(-week)
 //            
@@ -35,11 +39,11 @@ class MainVC: UIViewController, HasDependencies {
 //                
 //            })
             
-            self.di.api.series.actors(seriesId: 79636, success: { series in
-                print(series)
-            }, failure: { _ in
-                
-            })
+//            self.di.api.series.actors(seriesId: 79636, success: { series in
+//                print(series)
+//            }, failure: { _ in
+//                
+//            })
 
         }) { error in
             print(error)
